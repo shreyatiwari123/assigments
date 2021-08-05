@@ -19,4 +19,19 @@ Feature: Website front end testing
   Then user will verify that new account is opened
   
   
+  @tag3
+  Scenario: transfer funds
+  Given user open the browser
+  And user navigate the url
+  When user enter username as john and password as demo and click on login button
+  Then user click on transfer funds
+  Then user will click on ammount to be tranfer
+  When user will select from account 13344 to 13344
+  Then user will click on transfer button
+  Then user will verify that tranfer is completed
+  
+  
+  
+  
+  
    

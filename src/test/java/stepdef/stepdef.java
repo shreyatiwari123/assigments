@@ -63,18 +63,13 @@ public class stepdef {
 	@Then("user click on open new account")
 	public void user_click_on_open_new_account() {
 		WebElement OpenAccount=driver.findElement(By.xpath("//a[text()='Open New Account']"));
-		OpenAccount.click();
-		
-		
+		OpenAccount.click();		
 	}
 	@When("user select account type as Saving")
 	public void user_select_account_type_as_Saving() {
 	Select drpdown=new Select(driver.findElement(By.id("type")));
 	drpdown.selectByVisibleText("SAVINGS");
-	
-	
-			
-		
+				
 	}
 	@When("user click on open new account button")
 	public void user_click_on_open_new_account_button() {
@@ -90,6 +85,33 @@ public class stepdef {
 	Assert.assertEquals(expectedmsg,msg2);
 	System.out.println("user successfully verified that new account is opened");
 	}
+	 
+	
+	@Then("user click on transfer funds")
+	public void user_click_on_transfer_funds() {
+	WebElement funds=driver.findElement(By.xpath("//a[text()='Transfer Funds']"));
+	funds.click();
+	}
+	@Then("user will click on ammount to be tranfer")
+	public void user_will_click_on_ammount_to_be_tranfer() {
+	WebElement ammount=driver.findElement(By.id("amount"));
+	ammount.sendKeys("50000");	
+	}
+	@When("user will select from account 13344 to 13344")
+	public void user_will_select_from_account_13344_to_13344() {
+	Select drpdown=new Select(driver.findElement(By.id("fromAccountId")));
+	Select drpdown2=new Select(driver.findElement(By.id("toAccountId")));
+	drpdown.selectByVisibleText('13344');
+	drpdown2.selectByVisibleText('13344');
+	
+	}
+	@Then("user will click on transfer button")
+	public void user_will_click_on_transfer_button() {
+	WebElement button=driver.findElement(By.xpath("//input[@value='Transfer']"));
+	button.click();
+	}
+		
+	
 	@After
 	public void teardown() {
 		driver.quit();
