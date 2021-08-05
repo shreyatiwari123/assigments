@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features="classpath:features",//to tell cucumber where is ur feature file
         glue="classpath:stepdef", // to tell cucumber where is ur step def code
-        tags="@tag2", // to tell which tagged feature file to execute
+        tags="@tag3", // to tell which tagged feature file to execute
         plugin = {"pretty", // to generate reports
             "html:target/html/htmlreport.html",
             "json:target/json/file.json",
@@ -19,6 +19,5 @@ import org.junit.runner.RunWith;
         )
 
 public class runner {
-	
 
 }
